@@ -29,10 +29,10 @@ if __name__ == '__main__':
 
     set_seed(conf.seed)
     conf.search.epochs = (
-        conf.search.epochs if args.search_epoch is not None else args.search_epochs
+        conf.search.epochs if args.search_epochs is None else args.search_epochs
     )
     conf.evaluation.epochs = (
-        conf.evaluation.epochs if args.eval_epoch is not None else args.search_epochs
+        conf.evaluation.epochs if args.eval_epochs is None else args.search_epochs
     )
     conf.save_arch_weights = True
     conf.search_space = 'nasbench201'
