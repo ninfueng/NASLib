@@ -115,7 +115,7 @@ class Trainer(object):
 
             if self.optimizer.using_step_function:
                 for step, data_train in enumerate(self.train_queue):
-                    
+
                     if self.config.save_arch_weights is True:
                         if len(arch_weights) == 0:
                             for edge_weights in self.optimizer.architectural_weights:
@@ -123,7 +123,7 @@ class Trainer(object):
                         else:
                             for i, edge_weights in enumerate(self.optimizer.architectural_weights):
                                 arch_weights[i] = torch.cat((arch_weights[i], torch.unsqueeze(edge_weights.detach(), dim=0)), dim=0)
-                    
+
                     data_train = (
                         data_train[0].to(self.device),
                         data_train[1].to(self.device, non_blocking=True),

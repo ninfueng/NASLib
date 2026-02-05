@@ -44,7 +44,7 @@ class Ensemble(Predictor):
 
     def get_ensemble(self):
         # TODO: if encoding_type is not None, set the encoding type
-    
+
         trainable_predictors = {
             "bananas": MLPPredictor(ss_type=self.ss_type, encoding_type=EncodingType.PATH),
             "bayes_lin_reg": BayesianLinearRegression(
@@ -81,7 +81,7 @@ class Ensemble(Predictor):
                 ss_type=self.ss_type,
                 zc=self.zc,
                 encoding_type=EncodingType.ADJACENCY_ONE_HOT,
-                zc_only=self.zc_only    
+                zc_only=self.zc_only
             ),
             "rf": RandomForestPredictor(
                 ss_type=self.ss_type,
@@ -104,8 +104,8 @@ class Ensemble(Predictor):
                 zc=False,
             ),
             "xgb": XGBoost(
-                ss_type=self.ss_type, 
-                zc=self.zc, 
+                ss_type=self.ss_type,
+                zc=self.zc,
                 encoding_type=EncodingType.ADJACENCY_ONE_HOT,
                 zc_only=self.zc_only
             ),
